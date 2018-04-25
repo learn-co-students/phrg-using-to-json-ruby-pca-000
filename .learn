@@ -10,3 +10,5 @@ languages:
   - ruby
   - javascript
 resources: 0
+
+parent_template: git@github.com:learn-co-curriculum/using-to-json-ruby.git

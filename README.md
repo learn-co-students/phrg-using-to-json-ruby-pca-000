@@ -167,4 +167,4 @@ We've seen how to use `to_json` to easily serialize an object, how to customize 
 
 You're probably thinking about that `to_json` call up there and noticing how it went from very simple to a little complex for just a few fields, and worrying about what you'll have to do when you're serializing a *big* object model? Don't worry. We'll get there.
 
-<p data-visibility='hidden'>View <a href='https://learn.co/lessons/using-to-json-ruby'>Using to_json</a> on Learn.co and start learning to code for free.</p>
+<p data-visibility='hidden'>PHRG Using to_json</p>
