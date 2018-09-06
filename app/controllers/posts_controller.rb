@@ -6,6 +6,12 @@ class PostsController < ApplicationController
   end
 
   def show
+    @post = set_post
+    respond_to do |format|
+      format.html { render :show}
+      format.json { render json: @post.to_json(only: [:title, :description, :id],
+      include: [author: { only: [:name]}]) }
+    end
   end
 
   def new
@@ -28,13 +34,13 @@ class PostsController < ApplicationController
 
   def post_data
     post = Post.find(params[:id])
-    render json: PostSerializer.serialize(post)
+    render json: post.to_json(only: [:title, :description, :id], include: [ author: { only: [:name]}])
   end
 
 private
   # Use callbacks to share common setup or constraints between actions.
   def set_post
-    @post = Post.find(params[:id])
+    Post.find(params[:id])
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
